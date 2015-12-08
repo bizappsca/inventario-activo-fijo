@@ -1,0 +1,52 @@
+<div id="divConsulta" apply="controlador.consulta.CConsultaEquipo">
+<groupbox width="Auto" mold="3d" title="Consulta de Equipo">
+<grid width="auto">
+				<columns>
+					<column label="" width="20%" />
+					<column label="" width="30%" />
+					<column label="" width="50%" />
+				</columns>
+				<rows>
+					<row>
+						<combobox id="cmbBuscar" readonly="true"
+							placeholder="Seleccione tipo de consulta" tooltiptext="Seleccione tipo de consulta"
+							hflex="1">
+										<comboitem label="Indentificacion" />
+										<comboitem label="Tipo" />
+										<comboitem label="Departamento" />
+										<comboitem label="Descripcion" />
+										<comboitem label="Serial" />
+										<comboitem label="Estatus" />
+										<comboitem label="Usuario" />
+						</combobox>
+						<textbox id="textBoxBuscar" hflex="1"/>
+						<button autodisable="self" id="btnConsultar" class="btn"
+							label="Consultar" tooltiptext="Consultar" image="/public/imagenes/botones/buscar.png" />
+					</row>
+				</rows>
+</grid>
+<listbox span="true" rows="10" id="ltbEquipo"
+width="100%" emptyMessage="No se han agreegado equipos" mold="paging" pageSize="10">
+				<listhead>
+					<listheader label="Equipo" width="30%" sort="auto(identificacionEquipo)" />
+					<listheader label="Serial" width="30%" sort="auto(serial)"/>
+					<listheader label="Tipo" width="30%" sort="auto(tipo.tipo)"/>
+					<listheader label="Descripcion" width="30%" sort="auto(descripcion)"/>
+					<listheader label="Departamento" width="30%" sort="auto(departamento.departamento)"/>
+					<listheader label="Estatus" width="30%" sort="auto(estatus)"/>
+					<listheader label="Usuario" width="30%" sort="auto(usuario.nombre)"/>
+				</listhead>
+	<template name="model">
+		<listitem>
+					<listcell label="${each.identificacionEquipo}" />
+					<listcell label="${each.serial}" />
+					<listcell label="${each.tipo.tipo}" />
+					<listcell label="${each.descripcion}" />
+					<listcell label="${each.departamento.departamento}" />
+					<listcell label="${each.estatus}" />
+					<listcell label="${each.usuario.nombre}" />
+		</listitem>
+	</template>
+</listbox>
+</groupbox>
+</div>

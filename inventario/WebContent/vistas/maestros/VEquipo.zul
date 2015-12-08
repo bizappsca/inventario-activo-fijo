@@ -1,0 +1,288 @@
+<div id="divEquipo" apply="controlador.maestros.CEquipo">
+<groupbox width="auto" mold="3d" title="Equipos">
+<grid width="auto">
+				<columns>
+					<column label="" width="30%" />
+					<column label="" width="70%" />
+				</columns>
+				<rows>
+					<row>
+						<label class="etiqueta" value="Buscar Equipo" />
+						<button autodisable="self" id="btnBuscar2" class="btn"
+							label="Buscar" tooltiptext="Catalogo de Equipos" image="/public/imagenes/botones/buscar.png" />
+					</row>
+				</rows>
+</grid>
+<tabbox id="tb" height="auto" width="auto">
+				<tabs id="tabs">
+					<tab id="A" label="Datos del Equipo" />
+					<tab id="A2" label="Datos del Usuario" />
+				</tabs>
+				<tabpanels>
+					<tabpanel>
+						<separator />
+						<grid width="auto">
+							<columns>
+								<column label="" width="25%" />
+								<column label="" width="25%" />
+								<column label="" width="25%" />
+								<column label="" width="25%" />
+							</columns>
+							<rows>
+								<row>
+									<hbox>
+											<label value="Identificacion del equipo"
+												style="font-weight:bold;color:green" />
+												<space />
+											<label value="*" style="font-weight:bold;color:red" />
+									</hbox>
+									<hbox>
+											<textbox id="textBoxEquipo" hflex="1"/>
+									</hbox>
+									<hbox>
+											<label value="Serial del equipo"
+												style="font-weight:bold;color:green" />
+												<space />
+											<label value="*" style="font-weight:bold;color:red" />
+									</hbox>
+									<hbox>
+											<textbox id="textBoxSerial" hflex="1"/>
+									</hbox>
+								</row>
+								<row>
+									<hbox>
+											<label value="Descripcion del equipo"
+												style="font-weight:bold;color:green" />
+									</hbox>
+									<hbox>
+											<textbox id="textBoxDescripcion" maxlength="1500" multiline="true" hflex="1" />
+									</hbox>
+									<hbox>
+											<label value="Tipo de equipo"
+												style="font-weight:bold;color:green" />
+											<space />
+											<label value="*" style="font-weight:bold;color:red" />
+									</hbox>
+									<hbox>
+											<combobox id="cmbTipoEquipo" autodrop="true" readonly="true"
+												placeholder="Seleccione una de las alternativas"
+												tooltiptext="Seleccione el tipo de equipo"
+												hflex="1">
+												<template name="model">
+													<comboitem label="${each.tipo}" context="${each.idTipo}" />
+												</template>
+											</combobox>
+											<space />
+											<button class="abrir" id="btnAbrirTipo" label=""
+										tooltiptext="Crear un Nuevo Tipo" image="/public/imagenes/botones/agregar.png" />
+									</hbox>
+								</row>
+								<row>
+								<hbox>
+											<label value="Departamento"
+												style="font-weight:bold;color:green" />
+											<space />
+											<label value="*" style="font-weight:bold;color:red" />
+									</hbox>
+								<hbox>
+											<combobox id="cmbDepar" autodrop="true" readonly="true"
+												placeholder="Seleccione una de las alternativas"
+												tooltiptext="Seleccione el Departamento"
+												hflex="1">
+												<template name="model">
+													<comboitem label="${each.departamento}" context="${each.idDepartamento}" />
+												</template>
+											</combobox>
+											<space />
+											<button class="abrir" id="btnAbrirDepar" label=""
+										tooltiptext="Crear un Nuevo Departamento" image="/public/imagenes/botones/agregar.png" />
+									</hbox>
+								<hbox>
+											<label value="Fecha de compra"
+												style="font-weight:bold;color:green" />
+									</hbox>
+									<hbox>
+											<datebox id="dateBoxCompra" onCreate="self.value = new Date()" format="yyyy/MM/dd" readonly="true" />
+									</hbox>
+								</row>
+									<row>
+									<hbox>
+											<label value="Fecha de garantia"
+												style="font-weight:bold;color:green" />
+									</hbox>
+									<hbox>
+											<datebox id="dateBoxGarantia" format="yyyy/MM/dd" onCreate="self.value = new Date()" readonly="true" />
+									</hbox>
+									<hbox>
+											<label value="Precio original"
+												style="font-weight:bold;color:green" />
+											<space />
+											<label value="*" style="font-weight:bold;color:red" />
+									</hbox>
+									<hbox>
+											<doublespinner id="doubleSpinnerPrecio" value="0"
+												step="1" constraint="min 0" />
+									</hbox>
+								</row>
+								<row>
+									<hbox>
+											<label value="Estatus"
+												style="font-weight:bold;color:green" />
+											<space />
+											<label value="*" style="font-weight:bold;color:red" />
+									</hbox>
+									<cell colspan="3">
+									<radiogroup id="rdgEstatus">
+										<hlayout>
+											<radio id="rdoFunciona" label="En Funcionamiento" selected="En Funcionamiento" />
+											<radio id="rdoFueraS" label="Fuera de Servicio" selected="Fuera de Servicio" />
+											<radio id="rdoBackup" label="Backup" selected="Backup" />
+										</hlayout>
+									</radiogroup>
+									</cell>
+								</row>
+								</rows>
+						</grid>
+						<groupbox id="gpxApps" width="100%"
+							title="Seleccione los Programas Correspondientes">
+							<vbox>
+								<button class="abrir" id="btnAbrirApp" label=""
+									tooltiptext="Crear un Nuevo Programa" image="/public/imagenes/botones/agregar.png" />
+							</vbox>
+							<hbox>
+								<listbox id="ltbApp" height="280px" width="100%"
+								emptyMessage="No hay Programas Registrados">
+								<listhead>
+									<listheader label="Programa" width="100%" />
+								</listhead>
+								<template name="model">
+									<listitem>
+										<listcell label="${each.programa}">
+										</listcell>
+										<listcell>
+											<textbox tooltiptext="Ingrese el usuario"
+												width="98%" />
+										</listcell>
+										<listcell>
+											<textbox tooltiptext="Ingrese el password"
+												width="98%" />
+										</listcell>
+										<listcell>
+											<textbox tooltiptext="Ingrese observacion"
+												width="98%" />
+										</listcell>
+										<listcell>
+											<spinner inplace="true" width="98%" value="${each.idPrograma}"
+												visible="false" disabled="true" />
+										</listcell>
+									</listitem>
+								</template>
+							</listbox>
+							<vbox width="100%">
+								<button class="abrir" id="pasar1"
+									image="/public/imagenes/botones/adelante.png" tooltiptext="Agregar Nomina"
+									width="30px" />
+								<separator />
+								<button class="abrir" id="pasar2"
+									image="/public/imagenes/botones/atras.png" tooltiptext="Quitar Nomina"
+									width="30px" />
+							</vbox>
+							<listbox width="100%" id="ltbAppAgregados" height="280px"
+								emptyMessage="No ha Seleccionado Ningun Programa">
+								<listhead>
+									<listheader label="Programa" width="70%" />
+									<listheader label="Usuario" width="30%" />
+									<listheader label="Password" width="30%" />
+									<listheader label="Observacion" width="30%" />
+									<listheader label="id" visible="false" />
+								</listhead>
+								<template name="model">
+									<listitem>
+										<listcell label="${each.programa.programa}">
+										</listcell>
+										<listcell>
+											<textbox value="${each.usuario}"
+												tooltiptext="Ingrese el usuario"
+												width="98%" />
+										</listcell>
+										<listcell>
+											<textbox value="${each.password}"
+												tooltiptext="Ingrese el password"
+												width="98%" />
+										</listcell>
+										<listcell>
+											<textbox value="${each.observacion}"
+												tooltiptext="Ingrese observacion"
+												width="98%" />
+										</listcell>
+										<listcell>
+											<spinner value="${each.programa.idPrograma}" width="98%"
+												visible="false" disabled="true" />
+										</listcell>
+									</listitem>
+								</template>
+							</listbox>
+							</hbox>
+						</groupbox>
+					</tabpanel>
+					<tabpanel>
+						<separator />
+						<grid width="auto">
+							<columns>
+								<column label="" width="25%" />
+								<column label="" width="25%" />
+								<column label="" width="25%" />
+								<column label="" width="25%" />
+							</columns>
+							<rows>
+								<row>
+									<hbox>
+											<label value="Nombre y Apellido"
+												style="font-weight:bold;color:green" />
+									</hbox>
+									<hbox>
+											<label id="lblNombre" />
+									</hbox>
+									<cell colspan="2">
+											<button autodisable="self" id="btnBuscar1" class="btn"
+											label="Seleccionar" tooltiptext="Catalogo de Usuarios" image="/public/imagenes/botones/buscar.png" />
+											<space />
+											<button class="abrir" id="btnAbrirUsuario" label=""
+												tooltiptext="Crear un Nuevo Usuario" image="/public/imagenes/botones/agregar.png" />
+									</cell>
+								</row>
+								<row>
+									<hbox>
+											<label value="Cedula de Identidad"
+												style="font-weight:bold;color:green" />
+									</hbox>
+									<hbox>
+											<label id="lblCedula" />
+									</hbox>
+									<hbox>
+											<label value="Departamento"
+												style="font-weight:bold;color:green" />
+									</hbox>
+									<hbox>
+											<label id="lblDepartamento" />
+									</hbox>
+								</row>
+								<row>
+									<hbox>
+											<label value="Ubicacion"
+												style="font-weight:bold;color:green" />
+									</hbox>
+									<cell colspan="2">
+											<label id="lblUbicacion" />
+									</cell>
+								</row>
+								</rows>
+						</grid>
+					</tabpanel>
+					</tabpanels>
+					</tabbox>
+					<div id="botoneraEquipo" />
+					<div id="divCatalogoEquipo" />
+					<div id="divCatalogoUsuario" />
+</groupbox>
+</div>

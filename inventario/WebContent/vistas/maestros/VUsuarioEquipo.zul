@@ -1,0 +1,73 @@
+<div id="divUsuarioEquipo" apply="controlador.maestros.CUsuarioEquipo">
+<groupbox width="Auto" mold="3d" title="Usuario">
+<grid width="auto">
+				<columns>
+					<column label="" width="30%" />
+					<column label="" width="70%" />
+				</columns>
+				<rows>
+					<row>
+						<label value="Buscar Usuario" />
+						<button autodisable="self" id="btnBuscarUsuario" class="btn"
+							label="Buscar" tooltiptext="Catalogo de Usuarios" image="/public/imagenes/botones/buscar.png" />
+					</row>
+				</rows>
+</grid>
+						<grid width="auto">
+							<columns>
+								<column label="" width="25%" />
+								<column label="" width="25%" />
+								<column label="" width="25%" />
+								<column label="" width="25%" />
+							</columns>
+							<rows>
+								<row>
+									<hbox>
+											<label value="Nombre y Apellido"
+												style="font-weight:bold;color:green" />
+												<space />
+											<label value="*" style="font-weight:bold;color:red" />
+									</hbox>
+									<hbox>
+											<textbox id="textBoxNombre" hflex="1"/>
+									</hbox>
+									<hbox>
+											<label value="Cedula de Identidad"
+												style="font-weight:bold;color:green" />
+												<space />
+											<label value="*" style="font-weight:bold;color:red" />
+									</hbox>
+									<hbox>
+											<textbox id="textCedula" hflex="1"/>
+									</hbox>
+								</row><row>
+									<hbox>
+											<label value="Departamento"
+												style="font-weight:bold;color:green" />
+												<space />
+											<label value="*" style="font-weight:bold;color:red" />
+									</hbox>
+									<hbox>
+											<combobox id="cmbDepartamento" autodrop="true" readonly="true"
+												placeholder="Seleccione una de las alternativas"
+												tooltiptext="Seleccione el departamento"
+												hflex="1">
+												<template name="model">
+													<comboitem label="${each.departamento}" context="${each.idDepartamento}" />
+												</template>
+											</combobox>
+									</hbox>
+									<hbox>
+											<label value="Ubicacion"
+												style="font-weight:bold;color:green" />
+									</hbox>
+									<hbox>
+											<label id="lblUbicacion" />
+									</hbox>
+								</row>
+								</rows>
+						</grid>
+						<div id="botoneraUsuario" />
+						<div id="divCatalogoUsuario" />
+</groupbox>
+</div>

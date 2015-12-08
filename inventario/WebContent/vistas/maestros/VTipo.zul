@@ -1,0 +1,31 @@
+<div id="divTipo" apply="controlador.maestros.CTipo">
+<groupbox width="50%" mold="3d" title="Tipo">
+						<grid width="auto">
+							<columns visible="false">
+								<column label="" width="25%" />
+								<column label="" width="45%" />
+								<column label="" width="30%" />
+							</columns>
+							<rows>
+								<row>
+									<hbox>
+											<label value="Tipo de Equipo"
+												style="font-weight:bold;color:green" />
+												<space />
+											<label value="*" style="font-weight:bold;color:red" />
+									</hbox>
+									<hbox>
+											<textbox id="textBoxTipo" hflex="1" class="multilinea"
+													 tooltiptext="Ingrese el Nombre del Tipo" multiline="true"/>
+									</hbox>
+									<hbox>
+									<button autodisable="self" id="btnBuscarTipo" class="btn"
+											label="Buscar" tooltiptext="Catalogo Tipos" image="/public/imagenes/botones/buscar.png" />
+									</hbox>
+								</row>
+								</rows>
+						</grid>
+					<div id="botoneraTipo" />
+					<div id="divCatalogoTipo" />
+</groupbox>
+</div>
