@@ -17,8 +17,11 @@ import modelo.maestros.Programas;
 import modelo.maestros.Tipo;
 import modelo.maestros.Ubicacion;
 import modelo.maestros.UsuarioEquipo;
-import modelo.seguridad.Arbol;
-import modelo.seguridad.Grupo;
+
+
+
+import security.modelo.Arbol;
+import security.modelo.Grupo;
 import modelo.seguridad.Usuario;
 
 import org.zkoss.zk.ui.Sessions;
@@ -44,7 +47,7 @@ import org.zkoss.zul.Tab;
 import org.zkoss.zul.Tabbox;
 import org.zkoss.zul.Textbox;
 
-import arbol.CArbol;
+import security.controlador.CArbol;
 
 import componente.Botonera;
 import componente.Mensaje;
@@ -426,7 +429,7 @@ public class CEquipo extends CGenerico {
 		List<Arbol> arboles = servicioArbol.buscarPorNombreArbol("Tipo");
 		if (!arboles.isEmpty()) {
 			Arbol arbolItem = arboles.get(0);
-			cArbol.abrirVentanas(arbolItem, tabBox, contenido, tab, tabs);
+			cArbol.abrirVentanas(arbolItem);
 		}
 	}
 	@Listen("onClick = #btnAbrirUsuario")
@@ -434,7 +437,7 @@ public class CEquipo extends CGenerico {
 		List<Arbol> arboles = servicioArbol.buscarPorNombreArbol("Usuarios de Equipos");
 		if (!arboles.isEmpty()) {
 			Arbol arbolItem = arboles.get(0);
-			cArbol.abrirVentanas(arbolItem, tabBox, contenido, tab, tabs);
+			cArbol.abrirVentanas(arbolItem);
 		}
 	}
 	@Listen("onClick = #btnAbrirDepar")
@@ -442,7 +445,7 @@ public class CEquipo extends CGenerico {
 		List<Arbol> arboles = servicioArbol.buscarPorNombreArbol("Departamentos");
 		if (!arboles.isEmpty()) {
 			Arbol arbolItem = arboles.get(0);
-			cArbol.abrirVentanas(arbolItem, tabBox, contenido, tab, tabs);
+			cArbol.abrirVentanas(arbolItem);
 		}
 	}
 	@Listen("onOpen = #cmbTipoEquipo")

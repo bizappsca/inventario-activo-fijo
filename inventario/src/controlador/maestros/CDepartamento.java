@@ -6,7 +6,8 @@ import java.util.List;
 
 import modelo.maestros.Departamento;
 import modelo.maestros.Ubicacion;
-import modelo.seguridad.Arbol;
+//import modelo.seguridad.Arbol;
+import security.modelo.Arbol;
 
 import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.event.Event;
@@ -22,7 +23,7 @@ import org.zkoss.zul.Tab;
 import org.zkoss.zul.Tabbox;
 import org.zkoss.zul.Textbox;
 
-import arbol.CArbol;
+import security.controlador.CArbol;
 
 import componente.Botonera;
 import componente.Catalogo;
@@ -187,7 +188,7 @@ public class CDepartamento extends CGenerico {
 		List<Arbol> arboles = servicioArbol.buscarPorNombreArbol("Ubicacion");
 		if (!arboles.isEmpty()) {
 			Arbol arbolItem = arboles.get(0);			
-			cArbol.abrirVentanas(arbolItem, tabBox, contenido, tab, tabs);
+			cArbol.abrirVentanas(arbolItem);
 		}
 	}
 

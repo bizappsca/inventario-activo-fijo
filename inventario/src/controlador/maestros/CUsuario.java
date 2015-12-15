@@ -14,8 +14,8 @@ import javax.imageio.ImageIO;
 
 /*import modelo.maestros.Cita;
 import modelo.maestros.Especialidad;*/
-import modelo.seguridad.Arbol;
-import modelo.seguridad.Grupo;
+import security.modelo.Arbol;
+import security.modelo.Grupo;
 import modelo.seguridad.Usuario;
 
 import org.zkoss.image.AImage;
@@ -42,7 +42,7 @@ import org.zkoss.zul.Tab;
 import org.zkoss.zul.Tabbox;
 import org.zkoss.zul.Textbox;
 
-import arbol.CArbol;
+import security.controlador.CArbol;
 
 import componente.Botonera;
 import componente.Catalogo;
@@ -246,11 +246,13 @@ public class CUsuario extends CGenerico {
 						}
 						
 
-						Usuario usuario = new Usuario(cedula, direccion,
+						/*Usuario usuario = new Usuario(cedula, direccion,
 								correo, true, "estado", fechaHora, sexo,
 								imagenUsuario,login, nombre, apellido, 
 								nombre2, apellido2, password, sexo, telefono, 
-								nombreUsuarioSesion(), gruposUsuario);
+								nombreUsuarioSesion(), gruposUsuario);*/
+						
+						Usuario usuario= new Usuario();
 						servicioUsuario.guardar(usuario);
 						limpiar();
 						msj.mensajeInformacion(Mensaje.guardado);
@@ -372,7 +374,7 @@ public class CUsuario extends CGenerico {
 			ltbGruposDisponibles.setModel(new ListModelList<Grupo>(
 					gruposDisponibles));
 		} else {
-			gruposOcupados = servicioGrupo.buscarGruposDelUsuario(usuario);
+			gruposOcupados = null;//servicioGrupo.buscarGruposDelUsuario(usuario);
 			ltbGruposAgregados
 					.setModel(new ListModelList<Grupo>(gruposOcupados));
 			if (!gruposOcupados.isEmpty()) {
@@ -614,7 +616,7 @@ public class CUsuario extends CGenerico {
 				.buscarPorNombreArbol("Unidad Usuario");
 		if (!arboles.isEmpty()) {
 			Arbol arbolItem = arboles.get(0);
-			cArbol.abrirVentanas(arbolItem, tabBox, contenido, tab, tabs);
+			cArbol.abrirVentanas(arbolItem);
 		}
 	}
 
@@ -625,7 +627,7 @@ public class CUsuario extends CGenerico {
 				.buscarPorNombreArbol("Especialidad");
 		if (!arboles.isEmpty()) {
 			Arbol arbolItem = arboles.get(0);
-			cArbol.abrirVentanas(arbolItem, tabBox, contenido, tab, tabs);
+			cArbol.abrirVentanas(arbolItem);
 		}
 	}
 
@@ -640,7 +642,7 @@ public class CUsuario extends CGenerico {
 		List<Arbol> arboles = servicioArbol.buscarPorNombreArbol("Grupo");
 		if (!arboles.isEmpty()) {
 			Arbol arbolItem = arboles.get(0);
-			cArbol.abrirVentanas(arbolItem, tabBox, contenido, tab, tabs);
+			cArbol.abrirVentanas(arbolItem);
 		}
 	}
 

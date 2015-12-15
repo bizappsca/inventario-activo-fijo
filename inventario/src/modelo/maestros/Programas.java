@@ -13,7 +13,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import modelo.seguridad.Arbol;
 import modelo.seguridad.Usuario;
 
 import org.hibernate.annotations.Type;

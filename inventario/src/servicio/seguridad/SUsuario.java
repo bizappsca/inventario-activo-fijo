@@ -5,7 +5,6 @@ import interfacedao.seguridad.IUsuarioDAO;
 import java.util.List;
 
 /*import modelo.maestros.Especialidad;*/
-import modelo.seguridad.Grupo;
 import modelo.seguridad.Usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,9 +74,9 @@ public class SUsuario {
 	 * .findByEspecialidadDescripcionStartingWithAllIgnoreCase(valor); }
 	 */
 
-	public List<Usuario> buscarPorGrupo(Grupo grupo) {
+	/*public List<Usuario> buscarPorGrupo(Grupo grupo) {
 		return usuarioDAO.findByGrupos(grupo);
-	}
+	}*/
 
 	public Usuario buscarPorLogin(String value) {
 		return usuarioDAO.findByLogin(value);

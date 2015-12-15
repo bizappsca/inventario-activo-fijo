@@ -42,6 +42,10 @@ import org.zkoss.zul.Include;
 import org.zkoss.zul.Tab;
 import org.zkoss.zul.Tabbox;
 
+import security.servicio.SArbol;
+import security.servicio.SGrupo;
+import security.servicio.SUsuarioSeguridad;
+
 import servicio.maestros.SDepartamento;
 import servicio.maestros.SEquipo;
 import servicio.maestros.SEquipoPrograma;
@@ -95,8 +99,6 @@ import servicio.maestros.SUsuarioEquipo;
  import servicio.maestros.SServicioExterno;
  import servicio.maestros.SUnidadMedicina;
  import servicio.maestros.SVacuna;*/
-import servicio.seguridad.SArbol;
-import servicio.seguridad.SGrupo;
 import servicio.seguridad.SUsuario;
 /*import servicio.sha.SArea;
  import servicio.sha.SClasificacionAccidente;
@@ -133,201 +135,18 @@ import componente.Mensaje;
 public abstract class CGenerico extends SelectorComposer<Component> {
 
 	private static final long serialVersionUID = -2264423023637489596L;
-	/*
-	 * @WireVariable("SHorasHombre") protected SHorasHombre servicioHorasHombre;
-	 * 
-	 * @WireVariable("SFamiliar") protected SFamiliar servicioFamiliar;
-	 * 
-	 * @WireVariable("SEstadoCivil") protected SEstadoCivil servicioEstadoCivil;
-	 * 
-	 * @WireVariable("SF00021") protected SF00021 servicioF00021;
-	 * 
-	 * @WireVariable("SF4101") protected SF4101 servicioF4101;
-	 * 
-	 * @WireVariable("SF4105") protected SF4105 servicioF4105;
-	 * 
-	 * @WireVariable("SF41021") protected SF41021 servicioF41021;
-	 * 
-	 * @WireVariable("SF4211") protected SF4211 servicioF4211;
-	 * 
-	 * @WireVariable("SF4111") protected SF4111 servicioF4111;
-	 * 
-	 * @WireVariable("SAccidente") protected SAccidente servicioAccidente;
-	 * 
-	 * @WireVariable("SAntecedente") protected SAntecedente servicioAntecedente;
-	 * 
-	 * @WireVariable("SAntecedenteTipo") protected SAntecedenteTipo
-	 * servicioAntecedenteTipo;
-	 */
+
 	@WireVariable("SArbol")
 	protected SArbol servicioArbol;
-	/*
-	 * @WireVariable("SCargo") protected SCargo servicioCargo;
-	 * 
-	 * @WireVariable("SCategoriaDiagnostico") protected SCategoriaDiagnostico
-	 * servicioCategoriaDiagnostico;
-	 * 
-	 * @WireVariable("SCategoriaMedicina") protected SCategoriaMedicina
-	 * servicioCategoriaMedicina;
-	 * 
-	 * @WireVariable("SCita") protected SCita servicioCita;
-	 * 
-	 * @WireVariable("SControlConsulta") protected SControlConsulta
-	 * servicioControlConsulta;
-	 * 
-	 * @WireVariable("SControlOrden") protected SControlOrden
-	 * servicioControlOrden;
-	 * 
-	 * @WireVariable("SCiudad") protected SCiudad servicioCiudad;
-	 * 
-	 * @WireVariable("SCondicion") protected SCondicion servicioCondicion;
-	 * 
-	 * @WireVariable("SConsultorio") protected SConsultorio servicioConsultorio;
-	 * 
-	 * @WireVariable("SClasificacionDiagnostico") protected
-	 * SClasificacionDiagnostico servicioClasificacion;
-	 * 
-	 * @WireVariable("SConsulta") protected SConsulta servicioConsulta;
-	 * 
-	 * @WireVariable("SConsultaParteCuerpo") protected SConsultaParteCuerpo
-	 * servicioConsultaParteCuerpo;
-	 * 
-	 * @WireVariable("SConsultaDiagnostico") protected SConsultaDiagnostico
-	 * servicioConsultaDiagnostico;
-	 * 
-	 * @WireVariable("SConsultaEspecialista") protected SConsultaEspecialista
-	 * servicioConsultaEspecialista;
-	 * 
-	 * @WireVariable("SConsultaExamen") protected SConsultaExamen
-	 * servicioConsultaExamen;
-	 * 
-	 * @WireVariable("SConsultaMedicina") protected SConsultaMedicina
-	 * servicioConsultaMedicina;
-	 * 
-	 * @WireVariable("SConsultaServicioExterno") protected
-	 * SConsultaServicioExterno servicioConsultaServicioExterno;
-	 * 
-	 * @WireVariable("SDiagnostico") protected SDiagnostico servicioDiagnostico;
-	 * 
-	 * @WireVariable("SEmpresa") protected SEmpresa servicioEmpresa;
-	 * 
-	 * @WireVariable("SEspecialidad") protected SEspecialidad
-	 * servicioEspecialidad;
-	 * 
-	 * @WireVariable("SEspecialista") protected SEspecialista
-	 * servicioEspecialista;
-	 * 
-	 * @WireVariable("SEstado") protected SEstado servicioEstado;
-	 * 
-	 * @WireVariable("SExamen") protected SExamen servicioExamen;
-	 * 
-	 * @WireVariable("SEmpresaNomina") protected SEmpresaNomina
-	 * servicioEmpresaNomina;
-	 * 
-	 * @WireVariable("SHistoria") protected SHistoria servicioHistoria;
-	 * 
-	 * @WireVariable("SHistoriaAccidente") protected SHistoriaAccidente
-	 * servicioHistoriaAccidente;
-	 * 
-	 * @WireVariable("SHistoriaIntervencion") protected SHistoriaIntervencion
-	 * servicioHistoriaIntervencion;
-	 * 
-	 * @WireVariable("SHistoriaVacuna") protected SHistoriaVacuna
-	 * servicioHistoriaVacuna;
-	 * 
-	 * @WireVariable("SInforme") protected SInforme servicioInforme;
-	 * 
-	 * @WireVariable("SIntervencion") protected SIntervencion
-	 * servicioIntervencion;
-	 * 
-	 * @WireVariable("SLaboratorio") protected SLaboratorio servicioLaboratorio;
-	 * 
-	 * @WireVariable("SMedicina") protected SMedicina servicioMedicina;
-	 * 
-	 * @WireVariable("SMedicinaPresentacionUnidad") protected
-	 * SMedicinaPresentacionUnidad servicioMedicinaPresentacionUnidad;
-	 * 
-	 * @WireVariable("SMotivoCita") protected SMotivoCita servicioMotivoCita;
-	 * 
-	 * @WireVariable("SPaciente") protected SPaciente servicioPaciente;
-	 * 
-	 * @WireVariable("SOrden") protected SOrden servicioOrden;
-	 * 
-	 * @WireVariable("SOrdenServicioExterno") protected SOrdenServicioExterno
-	 * servicioOrdenServicio;
-	 * 
-	 * @WireVariable("SOrdenEspecialista") protected SOrdenEspecialista
-	 * servicioOrdenEspecialista;
-	 * 
-	 * @WireVariable("SOrdenExamen") protected SOrdenExamen servicioOrdenExamen;
-	 * 
-	 * @WireVariable("SOrdenMedicina") protected SOrdenMedicina
-	 * servicioOrdenMedicina;
-	 * 
-	 * @WireVariable("SPacienteMedicina") protected SPacienteMedicina
-	 * servicioPacienteMedicina;
-	 * 
-	 * @WireVariable("SPacienteAntecedente") protected SPacienteAntecedente
-	 * servicioPacienteAntecedente;
-	 * 
-	 * @WireVariable("SPais") protected SPais servicioPais;
-	 * 
-	 * @WireVariable("SParteCuerpo") protected SParteCuerpo servicioParteCuerpo;
-	 * 
-	 * @WireVariable("SPeriodo") protected SPeriodo servicioPeriodo;
-	 * 
-	 * @WireVariable("SPeriodoPaciente") protected SPeriodoPaciente
-	 * servicioPeriodoPaciente;
-	 * 
-	 * @WireVariable("SPlanAccion") protected SPlanAccion servicioPlanAccion;
-	 * 
-	 * @WireVariable("SPresentacionComercial") protected SPresentacionComercial
-	 * servicioPresentacion;
-	 * 
-	 * @WireVariable("SPresentacionMedicina") protected SPresentacionMedicina
-	 * servicioPresentacionMedicina;
-	 * 
-	 * @WireVariable("SProveedor") protected SProveedor servicioProveedor;
-	 * 
-	 * @WireVariable("SProveedorExamen") protected SProveedorExamen
-	 * servicioProveedorExamen;
-	 * 
-	 * @WireVariable("SProveedorServicio") protected SProveedorServicio
-	 * servicioProveedorServicio;
-	 * 
-	 * @WireVariable("SRecipe") protected SRecipe servicioRecipe;
-	 * 
-	 * @WireVariable("SServicioExterno") protected SServicioExterno
-	 * servicioServicioExterno;
-	 * 
-	 * @WireVariable("SUnidadMedicina") protected SUnidadMedicina
-	 * servicioUnidadMedicina;
-	 */
 	@WireVariable("SGrupo")
 	protected SGrupo servicioGrupo;
+	@WireVariable("SUsuarioSeguridad")
+	protected SUsuarioSeguridad servicioUsuarioSeguridad;
+
+
 	@WireVariable("SUsuario")
 	protected SUsuario servicioUsuario;
-	/*
-	 * @WireVariable("SVacuna") protected SVacuna servicioVacuna;
-	 * 
-	 * @WireVariable("SVisitaSocial") protected SVisitaSocial
-	 * servicioVisitaSocial;
-	 * 
-	 * @WireVariable("SComposicionFamiliar") protected SComposicionFamiliar
-	 * servicioComposicionFamiliar;
-	 * 
-	 * @WireVariable("SArea") protected SArea servicioArea;
-	 * 
-	 * @WireVariable("SClasificacionAccidente") protected
-	 * SClasificacionAccidente servicioClasificacionAccidente;
-	 * 
-	 * @WireVariable("SNomina") protected SNomina servicioNomina;
-	 * 
-	 * @WireVariable("SGrupoInspectores") protected SGrupoInspectores
-	 * servicioGrupoInspectores;
-	 * 
-	 * @WireVariable("SFicha") protected SFicha servicioFicha;
-	 */
+	
 
 	// Servicios del inventario
 	@WireVariable("SUsuarioEquipo")

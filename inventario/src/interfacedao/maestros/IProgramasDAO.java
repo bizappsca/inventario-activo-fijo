@@ -4,7 +4,7 @@ import java.util.List;
 
 import modelo.maestros.Equipo;
 import modelo.maestros.Programas;
-import modelo.seguridad.Grupo;
+
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

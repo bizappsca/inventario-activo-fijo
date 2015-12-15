@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
-<!-- 2015-12-14T08:56:47 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REquipos" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="954e9c0e-f556-4e6e-980b-3fc97173d2df">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="inventario_equipo"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -12,6 +10,9 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="varTipo" class="java.lang.String"/>
 	<parameter name="varDepar" class="java.lang.String"/>
 	<queryString>
@@ -40,7 +41,7 @@
 		<band height="63" splitType="Stretch">
 			<image>
 				<reportElement x="0" y="0" width="177" height="59" uuid="ef787506-97d6-41e5-a10f-a984ba0a2b51"/>
-				<imageExpression><![CDATA["C:/Users/ellen/Desktop/Trabajo/jasper studio/MyReports/logo1.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["/reportes/logo1.jpg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="191" y="14" width="229" height="35" uuid="77ad4f72-1e98-4e78-8cd0-c9f31e58f711"/>

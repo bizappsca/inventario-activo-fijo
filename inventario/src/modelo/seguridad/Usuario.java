@@ -83,7 +83,7 @@ public class Usuario implements Serializable {
 	@Column(name="usuario_auditoria", length=50)
 	private String usuarioAuditoria;
 
-	@ManyToMany
+	/*@ManyToMany
 	@JoinTable(
 		name="grupo_usuario"
 		, joinColumns={
@@ -93,7 +93,7 @@ public class Usuario implements Serializable {
 			@JoinColumn(name="id_grupo", nullable=false)
 			}
 		)
-	private Set<Grupo> grupos;
+	private Set<Grupo> grupos;*/
 	
 	public Usuario() {
 	}
@@ -104,7 +104,7 @@ public class Usuario implements Serializable {
 			byte[] imagen, String login, String nombre, String apellido,String segundoNombre, String segundoApellido,
 			String password, String sexo,
 			String telefono,
-			String usuarioAuditoria,Set<Grupo> grupos) {
+			String usuarioAuditoria) {
 		super();
 		this.cedula = cedula;
 		this.direccion = direccion;
@@ -123,7 +123,7 @@ public class Usuario implements Serializable {
 		this.sexo = sexo;
 		this.telefono = telefono;
 		this.usuarioAuditoria = usuarioAuditoria;
-		this.grupos = grupos;
+		//this.grupos = grupos;
 	}
 
 
@@ -232,13 +232,13 @@ public class Usuario implements Serializable {
 		this.usuarioAuditoria = usuarioAuditoria;
 	}
 
-	public Set<Grupo> getGrupos() {
+	/*public Set<Grupo> getGrupos() {
 		return grupos;
 	}
 
 	public void setGrupos(Set<Grupo> grupos) {
 		this.grupos = grupos;
-	}
+	}*/
 
 	public String getPrimerApellido() {
 		return primerApellido;

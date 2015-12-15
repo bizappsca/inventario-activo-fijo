@@ -10,7 +10,6 @@ import modelo.maestros.Equipo;
 import modelo.maestros.EquipoPrograma;
 import modelo.maestros.Programas;
 import modelo.maestros.Ubicacion;
-import modelo.seguridad.Grupo;
 import modelo.seguridad.Usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
