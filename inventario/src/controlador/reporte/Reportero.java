@@ -37,6 +37,7 @@ public class Reportero extends HttpServlet{
 		
 		CEquipo equipo = new CEquipo();
 		CEtiquetas etiqueta = new CEtiquetas();
+		CAuditoria auditoria = new CAuditoria();
 		
 		ServletOutputStream out;
 		String par1 = request.getParameter("valor");
@@ -65,6 +66,14 @@ public class Reportero extends HttpServlet{
 		case "2":
 			try {
 				fichero = etiqueta.reporteEtiqueta(par2, par3, tipo);
+			} catch (JRException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "3":
+			try {
+				fichero = auditoria.reporteAuditoria(par2, par3, tipo);
 			} catch (JRException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

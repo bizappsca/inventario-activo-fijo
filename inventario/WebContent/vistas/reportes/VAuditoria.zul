@@ -1,0 +1,61 @@
+<zk>
+	<style src="/public/Estilo.css" />
+	<div id="divCosto" apply="controlador.reporte.CAuditoria">
+		<groupbox width="75%" mold="3d" title="Reportes de Equipos">
+			<grid width="100%">
+				<columns visible="false">
+					<column label="" width="18%" />
+					<column label="" width="32%" />
+					<column label="" width="18%" />
+					<column label="" width="32%" />
+				</columns>
+				<rows>
+					<row>
+						<hbox>
+							<label class="etiqueta" value="Tipo:" />
+							<space />
+							<label value="*" style="font-weight:bold;color:red" />
+						</hbox>
+						<combobox id="cmbTipoEquipo" autodrop="true" readonly="true"
+							placeholder="Seleccione una de las alternativas"
+							tooltiptext="Seleccione el tipo de equipo"
+							hflex="1">
+							<template name="model">
+								<comboitem label="${each.tipo}" context="${each.idTipo}" />
+							</template>
+						</combobox>
+						<hbox>
+							<label class="etiqueta" value="Departamento:" />
+							<space />
+							<label value="*" style="font-weight:bold;color:red" />
+						</hbox>
+						<combobox id="cmbDepar" autodrop="true" readonly="true"
+							placeholder="Seleccione una de las alternativas"
+							tooltiptext="Seleccione el Departamento"
+							hflex="1">
+							<template name="model">
+								<comboitem label="${each.departamento}" context="${each.idDepartamento}" />
+							</template>
+						</combobox>
+					</row>
+					<row>
+						<hbox>
+							<label class="etiqueta" value="Reporte de Tipo:" />
+							<space />
+							<label value="*" style="font-weight:bold;color:red" />
+						</hbox>
+						<combobox id="cmbTipoReporte" readonly="true" tabindex="1"
+							value="PDF" width="100%" tooltiptext="Seleccione un Tipo"
+							placeholder="Seleccione un Tipo">
+							<comboitem label="PDF" />
+						</combobox>
+						<hbox />
+						<hbox />
+					</row>
+				</rows>
+			</grid>
+			<separator />
+			<div id="botoneraEquipo" />
+		</groupbox>
+	</div>
+</zk>

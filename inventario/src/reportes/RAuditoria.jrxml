@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
-<!-- 2015-12-14T08:56:47 -->
+<!-- 2015-12-15T08:36:40 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REquipos" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="954e9c0e-f556-4e6e-980b-3fc97173d2df">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="inventario_equipo"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -45,9 +45,9 @@
 			<staticText>
 				<reportElement x="191" y="14" width="229" height="35" uuid="77ad4f72-1e98-4e78-8cd0-c9f31e58f711"/>
 				<textElement>
-					<font fontName="Arial Black" size="20" isBold="false"/>
+					<font fontName="Arial Black" size="24" isBold="false"/>
 				</textElement>
-				<text><![CDATA[Reporte de Equipos]]></text>
+				<text><![CDATA[Reporte de Auditoria]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -55,7 +55,7 @@
 		<band height="7" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="22" splitType="Stretch">
+		<band height="19" splitType="Stretch">
 			<rectangle>
 				<reportElement x="0" y="-5" width="569" height="23" forecolor="#B3AFAF" backcolor="#B3AFAF" uuid="d6c93176-4f9b-40da-91aa-1372b2e21992"/>
 				<graphicElement>
@@ -78,19 +78,19 @@
 				<text><![CDATA[Descripcion]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="282" y="-1" width="80" height="17" uuid="f1f216a9-a240-472c-bfc1-c381efdeca82"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Tipo]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="374" y="-1" width="80" height="17" uuid="1d925024-a5c7-4210-962f-b1f26c01fd81"/>
+				<reportElement x="280" y="-1" width="80" height="17" uuid="1d925024-a5c7-4210-962f-b1f26c01fd81"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[Usuario]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="466" y="-1" width="80" height="17" uuid="15eca3b5-69d6-4c65-9a55-3932d8478a5d"/>
+				<reportElement x="372" y="-1" width="80" height="17" uuid="15eca3b5-69d6-4c65-9a55-3932d8478a5d"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[Estatus]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="482" y="-1" width="78" height="17" uuid="f81d834e-0862-421c-b4c2-46954520ae65"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Observación]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -112,20 +112,18 @@
 				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="282" y="0" width="80" height="20" uuid="68a8a3b9-f7b1-478d-ba64-5f911c3f6fec"/>
-				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[$F{tipo.tipo}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="374" y="0" width="80" height="20" uuid="26a617b1-6e89-4d1a-acec-0534b10089c6"/>
+				<reportElement x="280" y="0" width="80" height="20" uuid="26a617b1-6e89-4d1a-acec-0534b10089c6"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{usuario.nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="466" y="0" width="102" height="20" uuid="df6014e5-2827-4ef3-bf3e-b388ca3611cf"/>
+				<reportElement x="372" y="0" width="102" height="20" uuid="df6014e5-2827-4ef3-bf3e-b388ca3611cf"/>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[$F{estatus}]]></textFieldExpression>
 			</textField>
+			<line>
+				<reportElement x="474" y="17" width="97" height="1" uuid="a9e447b9-9ffd-48d9-98ed-13f397ab33c0"/>
+			</line>
 		</band>
 	</detail>
 	<columnFooter>
@@ -174,6 +172,27 @@
 		</band>
 	</pageFooter>
 	<summary>
-		<band splitType="Stretch"/>
+		<band height="122" splitType="Stretch">
+			<line>
+				<reportElement x="182" y="28" width="199" height="1" uuid="057783ef-b585-4b23-b39c-7a4cc1488871"/>
+			</line>
+			<staticText>
+				<reportElement x="102" y="18" width="80" height="20" uuid="4362a728-d1d1-4b5a-a93b-3e773439e358"/>
+				<text><![CDATA[Auditoria por:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="58" width="110" height="20" uuid="fb182e3f-7a04-4680-91aa-76f1d88d05bd"/>
+				<text><![CDATA[Observacion General:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="101" y="68" width="468" height="1" uuid="cb4c87b4-5627-405a-b307-1d7ce59b7026"/>
+			</line>
+			<line>
+				<reportElement x="0" y="88" width="569" height="1" uuid="e954c7ac-da97-4e1f-b5df-f56ec42d5dba"/>
+			</line>
+			<line>
+				<reportElement x="0" y="108" width="569" height="1" uuid="bac9cf0f-72be-455e-a638-6feefed3b0bd"/>
+			</line>
+		</band>
 	</summary>
 </jasperReport>
