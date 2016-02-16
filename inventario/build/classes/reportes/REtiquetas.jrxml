@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2016-02-16T15:15:17 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REtiquetas" columnCount="5" pageWidth="612" pageHeight="792" columnWidth="114" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="493c37a6-c1d5-4d4d-a777-49ba032fe962">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="inventario_equipo"/>
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
 	<field name="identificacionEquipo" class="java.lang.String"/>
+	<field name="tipo.tipo" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="49" splitType="Stretch">
-			<staticText>
-				<reportElement x="157" y="3" width="247" height="30" uuid="b481f71d-d653-42f6-8d35-37c929663280"/>
-				<textElement textAlignment="Center">
-					<font fontName="SansSerif" size="20"/>
-				</textElement>
-				<text><![CDATA[Etiquetas De Equipos]]></text>
-			</staticText>
+		<band height="65" splitType="Stretch">
 			<image>
-				<reportElement x="5" y="-7" width="180" height="40" uuid="05b78cfb-78e8-4eba-8c87-7fe0a17bcbd4"/>
-				<imageExpression><![CDATA["/reportes/logo1.jpg"]]></imageExpression>
+				<reportElement x="0" y="0" width="177" height="59" uuid="ea39a3b2-374f-4321-bcec-6fc28213c55c"/>
+				<imageExpression><![CDATA["C:/Users/ellen/Desktop/Trabajo/jasper studio/MyReports/logo1.jpg"]]></imageExpression>
 			</image>
+			<staticText>
+				<reportElement x="190" y="3" width="229" height="35" uuid="cd11d1fa-3908-48ca-8c89-8fde145df0dd"/>
+				<textElement>
+					<font fontName="Arial Black" size="24" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Etiquetas de Equipos]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>

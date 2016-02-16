@@ -88,8 +88,12 @@ public class CEtiquetas extends CGenerico {
 								.getSelectedItem().getContext()));
 				String tipo = cmbTipoReporte.getValue();
 				List<Equipo> consultas = new ArrayList<Equipo>();
-				if(tipoEquipo != null && depart != null){
-					consultas = servicioEquipo.reporteTipoYDepartamento(tipoEquipo, depart);
+				if(tipoEquipo==null){
+					if(depart!=null)
+						consultas = servicioEquipo.reporteDepartamento(depart);
+				}else{
+					if(depart!=null)
+						consultas = servicioEquipo.reporteTipoYDepartamento(tipoEquipo,depart);
 				}
 				long idTipo = 0;
 				if (tipoEquipo != null)
@@ -139,7 +143,12 @@ public class CEtiquetas extends CGenerico {
 	}
 	
 	private void cargarCombo() {
+		String todos = "TODOS";
+		Tipo tipo = new Tipo();
+		tipo.setTipo(todos);
+		tipo.setIdTipo(0);
 		List<Tipo> tipos = new ArrayList<Tipo>();
+		tipos.add(tipo);
 		tipos.addAll(servicioTipo.buscarTodos());
 		cmbTipoEquipo.setModel(new ListModelList<Tipo>(tipos));
 		List<Departamento> departs = new ArrayList<Departamento>();
@@ -153,12 +162,17 @@ public class CEtiquetas extends CGenerico {
 		Tipo tipoEquipo = getServicioTipo().buscar(par2);
 		Departamento depart = getServicioDepartamento().buscar(par3);
 		List<Equipo> consultas = new ArrayList<Equipo>();
-		if(tipoEquipo != null && depart != null){
-			consultas = getServicioEquipo().reporteTipoYDepartamento(tipoEquipo, depart);
-		}		
 		Map p = new HashMap();
-		p.put("varTipo",tipoEquipo.getTipo());
-		p.put("varDepar",depart.getDepartamento());
+		if(tipoEquipo==null){
+			if(depart!=null)
+				consultas = getServicioEquipo().reporteDepartamento(depart);
+			p.put("varDepar",depart.getDepartamento());
+		}else{
+			if(depart!=null)
+				consultas = getServicioEquipo().reporteTipoYDepartamento(tipoEquipo,depart);
+			p.put("varTipo",tipoEquipo.getTipo());
+			p.put("varDepar",depart.getDepartamento());
+		}
 		JasperReport reporte = null;
 		try {
 			reporte = (JasperReport) JRLoader.loadObject(getClass()

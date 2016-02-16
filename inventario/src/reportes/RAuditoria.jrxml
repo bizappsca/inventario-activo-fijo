@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2016-02-16T10:36:04 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REquipos" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="954e9c0e-f556-4e6e-980b-3fc97173d2df">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="inventario_equipo"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -10,9 +12,6 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
 	<parameter name="varTipo" class="java.lang.String"/>
 	<parameter name="varDepar" class="java.lang.String"/>
 	<queryString>
@@ -34,17 +33,74 @@
 	<group name="departamento">
 		<groupExpression><![CDATA[$F{departamento.departamento}]]></groupExpression>
 	</group>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{tipo.tipo}]]></groupExpression>
+		<groupHeader>
+			<band height="46">
+				<rectangle>
+					<reportElement x="0" y="21" width="569" height="23" forecolor="#B3AFAF" backcolor="#B3AFAF" uuid="d6c93176-4f9b-40da-91aa-1372b2e21992"/>
+					<graphicElement>
+						<pen lineStyle="Solid"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="482" y="25" width="78" height="17" uuid="f81d834e-0862-421c-b4c2-46954520ae65"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Observación]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="372" y="25" width="80" height="17" uuid="15eca3b5-69d6-4c65-9a55-3932d8478a5d"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Estatus]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="262" y="25" width="100" height="17" uuid="1d925024-a5c7-4210-962f-b1f26c01fd81"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Usuario]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="170" y="25" width="80" height="17" uuid="20610aba-f314-4a85-8969-4cf38a2229ff"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Descripcion]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="67" y="24" width="94" height="17" uuid="35fd57e0-55b6-4aaf-8cb6-5c1840eb93d9"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Serial]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="24" width="56" height="17" uuid="ed37c957-9db5-4183-a83e-08debca8742e"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[ID Equipo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="1" width="45" height="20" forecolor="#000000" uuid="1b675c2c-2eab-413b-b140-7e9ca0fd8f03"/>
+					<textElement>
+						<font size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Tipo:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="46" y="1" width="185" height="20" uuid="bf2f9d98-782f-4a50-8591-6d5c204fe608"/>
+					<textFieldExpression><![CDATA[$F{tipo.tipo}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="63" splitType="Stretch">
+		<band height="59" splitType="Stretch">
 			<image>
 				<reportElement x="0" y="0" width="177" height="59" uuid="ef787506-97d6-41e5-a10f-a984ba0a2b51"/>
-				<imageExpression><![CDATA["/reportes/logo1.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["C:/Users/ellen/Desktop/Trabajo/jasper studio/MyReports/logo1.jpg"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="191" y="14" width="229" height="35" uuid="77ad4f72-1e98-4e78-8cd0-c9f31e58f711"/>
+				<reportElement x="190" y="3" width="229" height="35" uuid="77ad4f72-1e98-4e78-8cd0-c9f31e58f711"/>
 				<textElement>
 					<font fontName="Arial Black" size="24" isBold="false"/>
 				</textElement>
@@ -53,67 +109,30 @@
 		</band>
 	</title>
 	<pageHeader>
-		<band height="7" splitType="Stretch"/>
+		<band splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="19" splitType="Stretch">
-			<rectangle>
-				<reportElement x="0" y="-5" width="569" height="23" forecolor="#B3AFAF" backcolor="#B3AFAF" uuid="d6c93176-4f9b-40da-91aa-1372b2e21992"/>
-				<graphicElement>
-					<pen lineStyle="Solid"/>
-				</graphicElement>
-			</rectangle>
-			<staticText>
-				<reportElement x="14" y="-2" width="80" height="17" uuid="ed37c957-9db5-4183-a83e-08debca8742e"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[ID Equipo]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="102" y="-2" width="80" height="17" uuid="35fd57e0-55b6-4aaf-8cb6-5c1840eb93d9"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Serial]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="191" y="-1" width="80" height="17" uuid="20610aba-f314-4a85-8969-4cf38a2229ff"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Descripcion]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="280" y="-1" width="80" height="17" uuid="1d925024-a5c7-4210-962f-b1f26c01fd81"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Usuario]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="372" y="-1" width="80" height="17" uuid="15eca3b5-69d6-4c65-9a55-3932d8478a5d"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Estatus]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="482" y="-1" width="78" height="17" uuid="f81d834e-0862-421c-b4c2-46954520ae65"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Observación]]></text>
-			</staticText>
-		</band>
+		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="27" splitType="Stretch">
+		<band height="22" splitType="Stretch">
 			<textField>
-				<reportElement x="14" y="0" width="80" height="20" uuid="fb4a9b87-6cad-4510-8be6-69126d75d8bd"/>
+				<reportElement x="1" y="0" width="56" height="20" uuid="fb4a9b87-6cad-4510-8be6-69126d75d8bd"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{identificacionEquipo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="102" y="0" width="80" height="20" uuid="be4917ca-c4c7-4c8e-886f-42937166a977"/>
+				<reportElement x="67" y="0" width="94" height="20" uuid="be4917ca-c4c7-4c8e-886f-42937166a977"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{serial}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="191" y="0" width="80" height="20" uuid="9712e255-7414-45a6-a6b8-c1b848f81d87"/>
+				<reportElement x="170" y="0" width="80" height="20" uuid="9712e255-7414-45a6-a6b8-c1b848f81d87"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="280" y="0" width="80" height="20" uuid="26a617b1-6e89-4d1a-acec-0534b10089c6"/>
+				<reportElement x="262" y="0" width="100" height="20" uuid="26a617b1-6e89-4d1a-acec-0534b10089c6"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{usuario.nombre}]]></textFieldExpression>
 			</textField>

@@ -37,8 +37,10 @@ public interface IEquipoDAO extends JpaRepository<Equipo, Long> {
 	Equipo findByTipo(String valor);
 
 	Equipo findByDepartamento(String valor);
-
+	
+	//reporte auditoria
 	List<Equipo> findByTipoAndDepartamento(Tipo valor, Departamento valorD);
+	List<Equipo> findByDepartamentoOrderByTipoAsc(Departamento valorD);
 
 	
 

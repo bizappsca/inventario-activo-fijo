@@ -68,8 +68,13 @@ public class SEquipo {
 	public Equipo filtroDeparReporte(String valor) {
 		return equipoDAO.findByDepartamento(valor);
 	}
+	//reporte Auditoria
 	public List<Equipo> reporteTipoYDepartamento(Tipo valor, Departamento valorD){
 		return equipoDAO.findByTipoAndDepartamento(valor,valorD);
+	}
+	
+	public List<Equipo> reporteDepartamento(Departamento valorD){
+		return equipoDAO.findByDepartamentoOrderByTipoAsc(valorD);
 	}
 
 }
