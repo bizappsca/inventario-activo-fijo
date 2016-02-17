@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
-<!-- 2016-02-16T15:41:39 -->
+<!-- 2016-02-17T18:35:29 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REquipos" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="954e9c0e-f556-4e6e-980b-3fc97173d2df">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="inventario_equipo"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -44,27 +44,27 @@
 					</graphicElement>
 				</rectangle>
 				<staticText>
-					<reportElement x="418" y="25" width="80" height="17" uuid="15eca3b5-69d6-4c65-9a55-3932d8478a5d"/>
+					<reportElement x="450" y="25" width="80" height="17" uuid="15eca3b5-69d6-4c65-9a55-3932d8478a5d"/>
 					<textElement textAlignment="Center"/>
 					<text><![CDATA[Estatus]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="308" y="25" width="100" height="17" uuid="1d925024-a5c7-4210-962f-b1f26c01fd81"/>
+					<reportElement x="340" y="25" width="100" height="17" uuid="1d925024-a5c7-4210-962f-b1f26c01fd81"/>
 					<textElement textAlignment="Center"/>
 					<text><![CDATA[Usuario]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="216" y="25" width="80" height="17" uuid="20610aba-f314-4a85-8969-4cf38a2229ff"/>
+					<reportElement x="179" y="25" width="151" height="17" uuid="20610aba-f314-4a85-8969-4cf38a2229ff"/>
 					<textElement textAlignment="Center"/>
 					<text><![CDATA[Descripcion]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="113" y="24" width="94" height="17" uuid="35fd57e0-55b6-4aaf-8cb6-5c1840eb93d9"/>
+					<reportElement x="76" y="24" width="94" height="17" uuid="35fd57e0-55b6-4aaf-8cb6-5c1840eb93d9"/>
 					<textElement textAlignment="Center"/>
 					<text><![CDATA[Serial]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="47" y="24" width="56" height="17" uuid="ed37c957-9db5-4183-a83e-08debca8742e"/>
+					<reportElement x="10" y="24" width="56" height="17" uuid="ed37c957-9db5-4183-a83e-08debca8742e"/>
 					<textElement textAlignment="Center"/>
 					<text><![CDATA[ID Equipo]]></text>
 				</staticText>
@@ -92,7 +92,7 @@
 		<band height="59" splitType="Stretch">
 			<image>
 				<reportElement x="0" y="0" width="177" height="59" uuid="ef787506-97d6-41e5-a10f-a984ba0a2b51"/>
-				<imageExpression><![CDATA["C:/Users/ellen/Desktop/Trabajo/jasper studio/MyReports/logo1.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["reportes/logo1.jpg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="190" y="3" width="229" height="35" uuid="77ad4f72-1e98-4e78-8cd0-c9f31e58f711"/>
@@ -112,27 +112,27 @@
 	<detail>
 		<band height="22" splitType="Stretch">
 			<textField>
-				<reportElement x="47" y="0" width="56" height="20" uuid="fb4a9b87-6cad-4510-8be6-69126d75d8bd"/>
+				<reportElement x="10" y="0" width="56" height="20" uuid="fb4a9b87-6cad-4510-8be6-69126d75d8bd"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{identificacionEquipo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="113" y="0" width="94" height="20" uuid="be4917ca-c4c7-4c8e-886f-42937166a977"/>
+				<reportElement x="76" y="0" width="94" height="20" uuid="be4917ca-c4c7-4c8e-886f-42937166a977"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{serial}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="216" y="0" width="80" height="20" uuid="9712e255-7414-45a6-a6b8-c1b848f81d87"/>
+				<reportElement x="179" y="0" width="151" height="20" uuid="9712e255-7414-45a6-a6b8-c1b848f81d87"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="308" y="0" width="100" height="20" uuid="26a617b1-6e89-4d1a-acec-0534b10089c6"/>
+				<reportElement x="340" y="0" width="100" height="20" uuid="26a617b1-6e89-4d1a-acec-0534b10089c6"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{usuario.nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="418" y="0" width="102" height="20" uuid="df6014e5-2827-4ef3-bf3e-b388ca3611cf"/>
+				<reportElement x="450" y="0" width="102" height="20" uuid="df6014e5-2827-4ef3-bf3e-b388ca3611cf"/>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[$F{estatus}]]></textFieldExpression>
 			</textField>

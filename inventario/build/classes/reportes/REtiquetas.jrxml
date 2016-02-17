@@ -15,7 +15,7 @@
 		<band height="65" splitType="Stretch">
 			<image>
 				<reportElement x="0" y="0" width="177" height="59" uuid="ea39a3b2-374f-4321-bcec-6fc28213c55c"/>
-				<imageExpression><![CDATA["C:/Users/ellen/Desktop/Trabajo/jasper studio/MyReports/logo1.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["reportes/logo1.jpg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="190" y="3" width="229" height="35" uuid="cd11d1fa-3908-48ca-8c89-8fde145df0dd"/>
