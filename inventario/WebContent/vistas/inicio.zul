@@ -1,7 +1,7 @@
-<?page id="mainPage" title="Inventario de Equipos" contentType="text/html;charset=utf-8"?>
+<?page id="mainPage" title="SISTEMA DE INVENTARIO DE EQUIPOS" contentType="text/html;charset=utf-8"?>
 <zk>
 <style>
-		.z-tree-icon .z-tree-open {
+	.z-tree-icon .z-tree-open {
 		background-image:
 		url('../public/imagenes/generales/carpetaCerrada.png');
 		background-repeat:no-repeat;
@@ -21,49 +21,41 @@
 		.z-tree-icon .z-tree-open::before,
 		.z-tree-icon .z-tree-close::before {
 		content: '';
-		}
-
+		} 
+          
 		span.z-tree-spacer:nth-last-child(2):before {
-		font-family: fontawesome;
-		content: url('../public/imagenes/generales/hoja.png');;
+		        font-family: fontawesome;
+			content: url('../public/imagenes/generales/hoja.png');;
 		}
 	</style>
 	<style src="../public/Estilo.css" />
 	<script src="/public/progress.js" />
-	<window title="" border="0" height="100%" width="100%" apply="security.controlador.CArbol">
+	<window id="wdwIndex" title="" height="100%" width="100%" position="center"
+		border="0" apply="security.controlador.CArbol">
 		<borderlayout height="100%" style="background-color:#fff;">
-			<north height="10%" class="banner">
-				<hbox hflex="1">
-					<vbox>
-						<image src="../public/imagenes/generales/LogoInicioSerloveca.jpg"/>
+			<north height="12%" class="bannerinterno">
+			<div>
+				<hbox width="100%" widths="10%,75%,15%">
+					<vbox width="100%">
+					<separator />
+					<image src="../public/imagenes/generales/LogoInicioSerloveca.jpg" />
 					</vbox>
-					<separator />
-					<separator />
-					<separator />
-					<separator />
 					<div align="center" width="100%">
+						<separator />
+						<separator />
+						<separator />
+						<separator />
 						<separator />
 						<separator />
 						<hbox>
-							<separator />
-							<separator />
-							<separator />
-							<separator />
-							<separator />
-							<label style="font-size:20px;color:white;font-weight: bold"
+							<label class="lblIndex" style="font-size:23px;font-weight: bold"
 								value="SISTEMA DE INVENTARIO DE EQUIPOS" />
 						</hbox>
 					</div>
-					<div align="center" width="100%">
+					<div align="right" width="100%">
+					<separator />
+					<separator />
 						<hbox height="100%" width="100%">
-							<separator />
-							<separator />
-							<separator />
-							<separator />
-							<separator />
-							<separator />
-							<separator />
-							<separator />
 							<vbox height="100%" width="100%">
 								<separator />
 								<image id="imagenes" width="60px" height="55px" />
@@ -71,40 +63,39 @@
 							<separator />
 							<vbox>
 								<separator />
-								<label style="color: white;font-weight: bold"
+								<a>
+								<space />
+								<label class="lblIndex" style="font-size:12px;font-weight: bold"
 									value="Usuario: ${desktop.execution.userPrincipal.name}" />
-								<a href="../j_spring_security_logout" style="color: white">
-									<space />
-									<label value="Cerrar Sesion" />
 								</a>
-								<a style="color: white">
+								 <a >
 									<space />
-									<label id="lblEditarCuenta" value="Editar Cuenta" />
-									<!-- onClick='contenido.src="../vistas/seguridad/VEditarUsuario.zul"' -->
+									<label class="lblIndex" style="font-size:12px;font-weight: bold" id="lblEditarCuenta" value="Editar Cuenta" />
+									<!--  onClick='contenido.src="../vistas/seguridad/VEditarUsuario.zul"'  --> 
 								</a>
+								
+								<a href="../j_spring_security_logout" style="color: red">
+									<space />
+									<label  style="font-size:14px;font-weight: bold" value="Cerrar Sesion" />
+								</a>
+								
 							</vbox>
 							<separator />
 							<separator />
 							<separator />
 							<separator />
 							<separator />
-								<vbox>
-								<listbox style="border:none" width="200px" id="ltbRoles">
-									<template name="model">
-										<listitem>
-											<listcell
-												style="border:none;font-size:14px;color:white;font-weight: bold"
-												class="gruposUsuario" label="${each.nombre}">
-											</listcell>
-										</listitem>
-									</template>
-								</listbox>
-							</vbox>
+							
+								
+							
 						</hbox>
 					</div>
-				</hbox>
+					
+					</hbox>
+					<div  style="height:400px;background:#298D4D"></div>
+				</div>
 			</north>
-			<west title="Menú" id="west" size="20%" splittable="true"
+			<west title="Menú" id="west" size="22%" splittable="true"
 				collapsible="true" autoscroll="true">
 				<tree id="arbolMenu" width="99%">
 					<template name="model">
@@ -117,12 +108,12 @@
 				</tree>
 			</west>
 			<center border="none">
-				<borderlayout style="overflow-y:scroll;" sclass="complex-layout">
-					<center hflex="1"
-						style="background-image: url('../public/imagenes/generales/ImagenAgua.png'); background-repeat:no-repeat; "
+				<borderlayout sclass="complex-layout" >
+					<center 
+						style="background-image: url('../public/imagenes/generales/ImagenAgua.png'); background-repeat:no-repeat; background-position:center; "
 						border="none" autoscroll="true">
-						<tabbox width="auto" id="tabBox" >
-							<tabs  context="editPopup">
+						<tabbox width="100%" id="tabBox">
+							<tabs context="editPopup">
 								<tab visible="false">Tab A</tab>
 								<tab id="tab" label="+" visible="false">
 								</tab>
@@ -132,18 +123,26 @@
 									<include id="contenido"></include>
 								</tabpanel>
 							</tabpanels>
-
 						</tabbox>
 					</center>
 				</borderlayout>
 			</center>
-			<south class="banner" vflex="2" border="0" height="3%"
-				collapsible="false">
+			<south class="banner" border="0" height="5%" collapsible="false">
 				<div align="center" sclass="footer">
 					<separator></separator>
 					<label style="padding-center:35%;color: white"
-							value="© 2015 Serloveca C.A | RIF: J-30940783-0 | Todos los derechos reservados | Desarrollado por BIZAPPS,C.A">
+						value="© 2016 TMI | Todos los derechos reservados | Desarrollado por TMI">
 					</label>
+					<listbox style="border:none" width="150px" id="ltbRoles" visible="false"  >
+									<template name="model">
+										<listitem>
+											<listcell
+												style="border:none;font-size:14px;color:black;font-weight: bold"
+												class="gruposUsuario" label="${each.nombre}">
+											</listcell>
+										</listitem>
+									</template>
+								</listbox>
 				</div>
 			</south>
 		</borderlayout>
